@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
+<!-- saved from url=(0045)file:///Users/samantha/Downloads/index_3.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mercato OKR Dashboard</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Mercato OKR Dashboard_files/css2" rel="stylesheet">
 <style>
   :root{
     --bg:#FBFAF7; --card:#FFFFFF; --ink:#1F2A24; --muted:#76837C;
@@ -68,7 +68,7 @@
   .period{font-family:var(--sans);font-size:11.5px;color:var(--green-dark);font-weight:600;
           background:#F1F5F2;border:1px solid var(--hairline);border-radius:6px;flex:none;
           padding:4px 24px 4px 9px;cursor:pointer;-webkit-appearance:none;appearance:none;
-          background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231E5C42' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231E5C42' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
           background-repeat:no-repeat;background-position:right 9px center}
   .period:focus-visible{outline:2px solid var(--p-modify);outline-offset:1px}
 
@@ -195,17 +195,6 @@
 
   .page-foot{font-size:11px;color:var(--muted);line-height:1.6;border-top:1px solid var(--hairline);
              padding-top:16px;margin-top:8px}
-  /* ===== TAT distribution (Teana addition) ===== */
-  .tat-sub{font-size:12px;color:var(--muted);margin:0 0 14px;line-height:1.5}
-  .tat-row{display:grid;grid-template-columns:180px 56px 1fr;align-items:center;gap:14px;padding:8px 0;border-bottom:1px solid var(--hairline)}
-  .tat-row:last-of-type{border-bottom:none}
-  .tat-lbl{font-size:13px;color:var(--ink);font-weight:500}
-  .tat-day{font-size:14px;font-weight:700;color:var(--ink)}
-  .tat-bar{display:flex;align-items:center;position:relative}
-  .tat-bar .fillv{height:20px;background:var(--green);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding:0 8px;color:#fff;font-size:11px;font-weight:700;min-width:36px;white-space:nowrap}
-  .tat-win{position:absolute;top:-5px;bottom:-5px;border-left:1.5px dashed var(--muted);z-index:2}
-  .tat-note{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.5}
-  .tat-note .win{display:inline-block;width:16px;border-top:1.5px dashed var(--muted);vertical-align:middle;margin:0 3px}
 </style>
 </head>
 <body>
@@ -229,8 +218,8 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <div class="chart" id="chart"></div>
-        <div class="legend" id="legend"></div>
+        <div class="chart" id="chart"><div class="col"><div class="total">260</div><div class="bar" style="height: 7.92441px;"><div class="seg" title="HVCC — 15" style="background: var(--p-hvcc); height: 5.76923%;"></div><div class="seg" title="SOMOS — 25" style="background: var(--p-somos); height: 9.61538%;"></div><div class="seg" title="ModifyHealth — 180" style="background: var(--p-modify); height: 69.2308%;"></div><div class="seg" title="SIPPS — 40" style="background: var(--p-sipps); height: 15.3846%;"></div></div><div class="qlabel">Q2 '25</div></div><div class="col"><div class="total">431</div><div class="bar" style="height: 13.1362px;"><div class="seg" title="HVCC — 26" style="background: var(--p-hvcc); height: 6.03248%;"></div><div class="seg" title="SOMOS — 45" style="background: var(--p-somos); height: 10.4408%;"></div><div class="seg" title="ModifyHealth — 250" style="background: var(--p-modify); height: 58.0046%;"></div><div class="seg" title="SIPPS — 110" style="background: var(--p-sipps); height: 25.522%;"></div></div><div class="qlabel">Q3 '25</div></div><div class="col"><div class="total">2,615</div><div class="bar" style="height: 79.7013px;"><div class="seg" title="HVCC — 165" style="background: var(--p-hvcc); height: 6.30975%;"></div><div class="seg" title="SOMOS — 250" style="background: var(--p-somos); height: 9.56023%;"></div><div class="seg" title="ModifyHealth — 1,000" style="background: var(--p-modify); height: 38.2409%;"></div><div class="seg" title="SIPPS — 1,200" style="background: var(--p-sipps); height: 45.8891%;"></div></div><div class="qlabel">Q4 '25</div></div><div class="col"><div class="total">4,900</div><div class="bar" style="height: 149.345px;"><div class="seg" title="CDChoices — 50" style="background: var(--p-cd); height: 1.02041%;"></div><div class="seg" title="HVCC — 230" style="background: var(--p-hvcc); height: 4.69388%;"></div><div class="seg" title="SOMOS — 420" style="background: var(--p-somos); height: 8.57143%;"></div><div class="seg" title="ModifyHealth — 1,800" style="background: var(--p-modify); height: 36.7347%;"></div><div class="seg" title="SIPPS — 2,400" style="background: var(--p-sipps); height: 48.9796%;"></div></div><div class="qlabel">Q1 '26</div></div><div class="col current"><div class="total">6,562</div><div class="bar" style="height: 200px;"><div class="seg" title="ACT Care — 10" style="background: var(--p-act); height: 0.152393%;"></div><div class="seg" title="CDChoices — 62" style="background: var(--p-cd); height: 0.944834%;"></div><div class="seg" title="HVCC — 280" style="background: var(--p-hvcc); height: 4.26699%;"></div><div class="seg" title="SOMOS — 560" style="background: var(--p-somos); height: 8.53398%;"></div><div class="seg" title="ModifyHealth — 2,150" style="background: var(--p-modify); height: 32.7644%;"></div><div class="seg" title="SIPPS — 3,500" style="background: var(--p-sipps); height: 53.3374%;"></div></div><div class="qlabel">Q2 '26 QTD</div></div></div>
+        <div class="legend" id="legend"><div class="lg"><span class="sw" style="background:var(--p-sipps)"></span>SIPPS</div><div class="lg"><span class="sw" style="background:var(--p-modify)"></span>ModifyHealth</div><div class="lg"><span class="sw" style="background:var(--p-somos)"></span>SOMOS</div><div class="lg"><span class="sw" style="background:var(--p-hvcc)"></span>HVCC</div><div class="lg"><span class="sw" style="background:var(--p-cd)"></span>CDChoices</div><div class="lg"><span class="sw" style="background:var(--p-act)"></span>ACT Care</div></div>
       </div>
 
       <div class="card">
@@ -243,7 +232,7 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <table id="tbl"></table>
+        <table id="tbl"><thead><tr><th class="lead">Program</th><th>Q2 '25</th><th>Q3 '25</th><th>Q4 '25</th><th>Q1 '26</th><th>Q2 '26 QTD</th></tr></thead><tbody><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-sipps)"></span>SIPPS</span></td><td class="">40</td><td class="">110</td><td class="">1,200</td><td class="">2,400</td><td class="">3,500</td></tr><tr><td class="lead"><span class="leadwrap"><span class="pname"><span class="sw" style="background:var(--p-modify)"></span>ModifyHealth</span><button class="toggle" id="mh-toggle" aria-label="Toggle ModifyHealth sub-programs" aria-expanded="false">+</button></span></td><td class="">180</td><td class="">250</td><td class="">1,000</td><td class="">1,800</td><td class="">2,150</td></tr><tr class="mh-child" hidden=""><td class="lead child"><span class="subname">HA</span></td><td class="">134</td><td class="">187</td><td class="">744</td><td class="">1,341</td><td class="">1,601</td></tr><tr class="mh-child" hidden=""><td class="lead child"><span class="subname">HVCC</span></td><td class="">12</td><td class="">17</td><td class="">67</td><td class="">121</td><td class="">145</td></tr><tr class="mh-child" hidden=""><td class="lead child"><span class="subname">SOMOS</span></td><td class="">22</td><td class="">30</td><td class="">120</td><td class="">216</td><td class="">258</td></tr><tr class="mh-child" hidden=""><td class="lead child"><span class="subname">FLIPA</span></td><td class="">12</td><td class="">16</td><td class="">66</td><td class="">118</td><td class="">141</td></tr><tr class="mh-child" hidden=""><td class="lead child"><span class="subname">HEALI</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="">1</td><td class="">1</td><td class="">1</td></tr><tr class="mh-child" hidden=""><td class="lead child"><span class="subname">PHS</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="">2</td><td class="">3</td><td class="">4</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-somos)"></span>SOMOS</span></td><td class="">25</td><td class="">45</td><td class="">250</td><td class="">420</td><td class="">560</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-hvcc)"></span>HVCC</span></td><td class="">15</td><td class="">26</td><td class="">165</td><td class="">230</td><td class="">280</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-cd)"></span>CDChoices</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="">50</td><td class="">62</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-act)"></span>ACT Care</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="">10</td></tr></tbody><tfoot><tr><td class="lead">Total</td><td>260</td><td>431</td><td>2,615</td><td>4,900</td><td>6,562</td></tr></tfoot></table>
       </div>
     </div>
   </section>
@@ -257,22 +246,14 @@
         <div class="card-head">
           <span class="card-title">Referral Conversion Rate (14 Days)</span>
         </div>
-        <div class="ratechart" id="conv-chart"></div>
+        <div class="ratechart" id="conv-chart"><div class="rc-plot"><div class="rc-bars"><div class="rcol"><span class="rv">72.0%</span><div class="rbar miss" style="height:144.0px"></div></div><div class="rcol"><span class="rv">75.7%</span><div class="rbar miss" style="height:151.4px"></div></div><div class="rcol"><span class="rv">76.8%</span><div class="rbar miss" style="height:153.6px"></div></div><div class="rcol"><span class="rv">79.1%</span><div class="rbar miss" style="height:158.2px"></div></div><div class="rcol current"><span class="rv">82.8%</span><div class="rbar miss" style="height:165.6px"></div></div></div></div><div class="rc-xlabels"><span class="rl">Q2 '25</span><span class="rl">Q3 '25</span><span class="rl">Q4 '25</span><span class="rl">Q1 '26</span><span class="rl current">Q2 '26 QTD</span></div></div>
       </div>
 
       <div class="card">
         <div class="card-head">
           <span class="card-title">Referral Conversion Rate (14 Days) By Program</span>
         </div>
-        <table id="conv-tbl"></table>
-      </div>
-
-      <div class="card">
-        <div class="card-head">
-          <span class="card-title">Turnaround Time (TAT) Distribution</span>
-        </div>
-        <div class="tat-sub">Days from Case Created to Converted Referral Date, positive values only. The window should cover the tail — where conversions stop arriving — not just the average.</div>
-        <div id="tat-dist"></div>
+        <table id="conv-tbl"><thead><tr><th class="lead">Program</th><th>Q2 '25</th><th>Q3 '25</th><th>Q4 '25</th><th>Q1 '26</th><th>Q2 '26 QTD</th></tr></thead><tbody><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-sipps)"></span>SIPPS</span></td><td class="">78.5%</td><td class="">81.3%</td><td class="">81.8%</td><td class="">83.9%</td><td class="">87.0%</td></tr><tr><td class="lead"><span class="leadwrap"><span class="pname"><span class="sw" style="background:var(--p-modify)"></span>ModifyHealth</span><button class="toggle" id="conv-mh-toggle" aria-label="Toggle ModifyHealth sub-programs" aria-expanded="false">+</button></span></td><td class="">76.1%</td><td class="">77.9%</td><td class="">78.8%</td><td class="">82.4%</td><td class="">85.0%</td></tr><tr class="conv-mh-child" hidden=""><td class="lead child"><span class="subname">HA</span></td><td>75.0%</td><td>78.4%</td><td>79.2%</td><td>80.6%</td><td>84.0%</td></tr><tr class="conv-mh-child" hidden=""><td class="lead child"><span class="subname">HVCC</span></td><td>80.7%</td><td>82.9%</td><td>83.1%</td><td>85.3%</td><td>88.0%</td></tr><tr class="conv-mh-child" hidden=""><td class="lead child"><span class="subname">SOMOS</span></td><td>86.1%</td><td>86.8%</td><td>86.8%</td><td>89.5%</td><td>91.0%</td></tr><tr class="conv-mh-child" hidden=""><td class="lead child"><span class="subname">FLIPA</span></td><td>70.2%</td><td>71.3%</td><td>73.4%</td><td>77.9%</td><td>80.0%</td></tr><tr class="conv-mh-child" hidden=""><td class="lead child"><span class="subname">HEALI</span></td><td>79.8%</td><td>79.8%</td><td>81.9%</td><td>85.4%</td><td>86.0%</td></tr><tr class="conv-mh-child" hidden=""><td class="lead child"><span class="subname">PHS</span></td><td>66.2%</td><td>67.8%</td><td>72.1%</td><td>76.2%</td><td>78.0%</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-somos)"></span>SOMOS</span></td><td class="">95.1%</td><td class="">94.9%</td><td class="">96.1%</td><td class="">99.4%</td><td class="">100.0%</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-hvcc)"></span>HVCC</span></td><td class="">85.1%</td><td class="">87.1%</td><td class="">87.3%</td><td class="">89.7%</td><td class="">92.3%</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-cd)"></span>CDChoices</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-act)"></span>ACT Care</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td></tr></tbody><tfoot><tr><td class="lead">Blended</td><td>72.0%</td><td>75.7%</td><td>76.8%</td><td>79.1%</td><td>82.8%</td></tr></tfoot></table>
       </div>
     </div>
   </section>
@@ -292,8 +273,8 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <div class="chart" id="memb-chart"></div>
-        <div class="legend" id="memb-legend"></div>
+        <div class="chart" id="memb-chart"><div class="col"><div class="total">180</div><div class="bar" style="height: 3.10961px;"><div class="seg" title="HVCC — 8" style="background: var(--p-hvcc); height: 4.44444%;"></div><div class="seg" title="SOMOS — 12" style="background: var(--p-somos); height: 6.66667%;"></div><div class="seg" title="ModifyHealth — 110" style="background: var(--p-modify); height: 61.1111%;"></div><div class="seg" title="SIPPS — 50" style="background: var(--p-sipps); height: 27.7778%;"></div></div><div class="qlabel">Q2 '25</div></div><div class="col"><div class="total">616</div><div class="bar" style="height: 10.6418px;"><div class="seg" title="HVCC — 21" style="background: var(--p-hvcc); height: 3.40909%;"></div><div class="seg" title="SOMOS — 35" style="background: var(--p-somos); height: 5.68182%;"></div><div class="seg" title="ModifyHealth — 360" style="background: var(--p-modify); height: 58.4416%;"></div><div class="seg" title="SIPPS — 200" style="background: var(--p-sipps); height: 32.4675%;"></div></div><div class="qlabel">Q3 '25</div></div><div class="col"><div class="total">3,158</div><div class="bar" style="height: 54.5564px;"><div class="seg" title="HVCC — 78" style="background: var(--p-hvcc); height: 2.46992%;"></div><div class="seg" title="SOMOS — 130" style="background: var(--p-somos); height: 4.11653%;"></div><div class="seg" title="ModifyHealth — 1,450" style="background: var(--p-modify); height: 45.9151%;"></div><div class="seg" title="SIPPS — 1,500" style="background: var(--p-sipps); height: 47.4984%;"></div></div><div class="qlabel">Q4 '25</div></div><div class="col"><div class="total">7,711</div><div class="bar" style="height: 133.212px;"><div class="seg" title="CDChoices — 1" style="background: var(--p-cd); height: 0.0129684%;"></div><div class="seg" title="HVCC — 110" style="background: var(--p-hvcc); height: 1.42653%;"></div><div class="seg" title="SOMOS — 200" style="background: var(--p-somos); height: 2.5937%;"></div><div class="seg" title="ModifyHealth — 3,800" style="background: var(--p-modify); height: 49.2802%;"></div><div class="seg" title="SIPPS — 3,600" style="background: var(--p-sipps); height: 46.6866%;"></div></div><div class="qlabel">Q1 '26</div></div><div class="col current"><div class="total">11,577</div><div class="bar" style="height: 200px;"><div class="seg" title="CDChoices — 1" style="background: var(--p-cd); height: 0.0086378%;"></div><div class="seg" title="HVCC — 149" style="background: var(--p-hvcc); height: 1.28703%;"></div><div class="seg" title="SOMOS — 382" style="background: var(--p-somos); height: 3.29965%;"></div><div class="seg" title="ModifyHealth — 5,778" style="background: var(--p-modify); height: 49.9093%;"></div><div class="seg" title="SIPPS — 5,267" style="background: var(--p-sipps); height: 45.4954%;"></div></div><div class="qlabel">Q2 '26 QTD</div></div></div>
+        <div class="legend" id="memb-legend"><div class="lg"><span class="sw" style="background:var(--p-sipps)"></span>SIPPS</div><div class="lg"><span class="sw" style="background:var(--p-modify)"></span>ModifyHealth</div><div class="lg"><span class="sw" style="background:var(--p-somos)"></span>SOMOS</div><div class="lg"><span class="sw" style="background:var(--p-hvcc)"></span>HVCC</div><div class="lg"><span class="sw" style="background:var(--p-cd)"></span>CDChoices</div><div class="lg"><span class="sw" style="background:var(--p-act)"></span>ACT Care</div></div>
       </div>
 
       <div class="card">
@@ -306,7 +287,7 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <table id="memb-tbl"></table>
+        <table id="memb-tbl"><thead><tr><th class="lead">Program</th><th>Q2 '25</th><th>Q3 '25</th><th>Q4 '25</th><th>Q1 '26</th><th>Q2 '26 QTD</th></tr></thead><tbody><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-sipps)"></span>SIPPS</span></td><td class="">50</td><td class="">200</td><td class="">1,500</td><td class="">3,600</td><td class="">5,267</td></tr><tr><td class="lead"><span class="leadwrap"><span class="pname"><span class="sw" style="background:var(--p-modify)"></span>ModifyHealth</span><button class="toggle" id="memb-mh-toggle" aria-label="Toggle ModifyHealth sub-programs" aria-expanded="false">+</button></span></td><td class="">110</td><td class="">360</td><td class="">1,450</td><td class="">3,800</td><td class="">5,778</td></tr><tr class="memb-mh-child" hidden=""><td class="lead child"><span class="subname">HA</span></td><td class="">83</td><td class="">268</td><td class="">1,079</td><td class="">2,829</td><td class="">4,302</td></tr><tr class="memb-mh-child" hidden=""><td class="lead child"><span class="subname">HVCC</span></td><td class="">7</td><td class="">24</td><td class="">98</td><td class="">256</td><td class="">389</td></tr><tr class="memb-mh-child" hidden=""><td class="lead child"><span class="subname">SOMOS</span></td><td class="">13</td><td class="">43</td><td class="">174</td><td class="">456</td><td class="">693</td></tr><tr class="memb-mh-child" hidden=""><td class="lead child"><span class="subname">FLIPA</span></td><td class="">7</td><td class="">24</td><td class="">95</td><td class="">250</td><td class="">380</td></tr><tr class="memb-mh-child" hidden=""><td class="lead child"><span class="subname">HEALI</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="">1</td><td class="">2</td><td class="">3</td></tr><tr class="memb-mh-child" hidden=""><td class="lead child"><span class="subname">PHS</span></td><td class="ztext">–</td><td class="">1</td><td class="">3</td><td class="">7</td><td class="">11</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-somos)"></span>SOMOS</span></td><td class="">12</td><td class="">35</td><td class="">130</td><td class="">200</td><td class="">382</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-hvcc)"></span>HVCC</span></td><td class="">8</td><td class="">21</td><td class="">78</td><td class="">110</td><td class="">149</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-cd)"></span>CDChoices</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="">1</td><td class="">1</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-act)"></span>ACT Care</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td></tr></tbody><tfoot><tr><td class="lead">Total</td><td>180</td><td>616</td><td>3,158</td><td>7,711</td><td>11,577</td></tr></tfoot></table>
       </div>
     </div>
 
@@ -321,7 +302,7 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <table id="ft-tbl"></table>
+        <table id="ft-tbl"><thead><tr><th class="lead">Type</th><th>Q2 '25</th><th>Q3 '25</th><th>Q4 '25</th><th>Q1 '26</th><th>Q2 '26 QTD</th></tr></thead><tbody><tr><td class="lead"><span class="pname"><span class="sw" style="background:#3E9B6E"></span>Voucher credit</span></td><td>90</td><td>260</td><td>1,150</td><td>2,700</td><td>4,078</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:#D8B25A"></span>Box</span></td><td>20</td><td>60</td><td>280</td><td>600</td><td>823</td></tr></tbody><tfoot><tr><td class="lead">Total</td><td>110</td><td>320</td><td>1,430</td><td>3,300</td><td>4,901</td></tr></tfoot></table>
       </div>
       <div class="card">
         <div class="card-head">
@@ -333,7 +314,7 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <table id="fp-tbl"></table>
+        <table id="fp-tbl"><thead><tr><th class="lead">Partner</th><th>Q2 '25</th><th>Q3 '25</th><th>Q4 '25</th><th>Q1 '26</th><th>Q2 '26 QTD</th></tr></thead><tbody><tr><td class="lead"><span class="pname"><span class="sw" style="background:#6E8CA8"></span>Morrissey Market</span></td><td>60</td><td>180</td><td>850</td><td>1,500</td><td>2,100</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:#B5895A"></span>EA Fresh</span></td><td>40</td><td>120</td><td>600</td><td>1,050</td><td>1,500</td></tr></tbody><tfoot><tr><td class="lead">Total</td><td>100</td><td>300</td><td>1,450</td><td>2,550</td><td>3,600</td></tr></tfoot></table>
       </div>
     </div>
   </section>
@@ -353,7 +334,7 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <div class="ratechart" id="cancel-chart"></div>
+        <div class="ratechart" id="cancel-chart"><div class="rc-plot"><div class="rc-bars"><div class="rcol"><span class="rv">2.8%</span><div class="rbar" style="height:98.9px;background:var(--green)"></div></div><div class="rcol"><span class="rv">4.1%</span><div class="rbar" style="height:144.8px;background:var(--green)"></div></div><div class="rcol"><span class="rv">3.0%</span><div class="rbar" style="height:105.9px;background:var(--green)"></div></div><div class="rcol"><span class="rv">3.3%</span><div class="rbar" style="height:116.5px;background:var(--green)"></div></div><div class="rcol current"><span class="rv">4.8%</span><div class="rbar" style="height:169.5px;background:var(--green)"></div></div></div></div><div class="rc-xlabels"><span class="rl">Q2 '25</span><span class="rl">Q3 '25</span><span class="rl">Q4 '25</span><span class="rl">Q1 '26</span><span class="rl current">Q2 '26 QTD</span></div></div>
       </div>
 
       <div class="card">
@@ -366,7 +347,7 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <table id="cancel-tbl"></table>
+        <table id="cancel-tbl"><thead><tr><th class="lead">Program</th><th>Q2 '25</th><th>Q3 '25</th><th>Q4 '25</th><th>Q1 '26</th><th>Q2 '26 QTD</th></tr></thead><tbody><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-sipps)"></span>SIPPS</span></td><td class="">2.9%</td><td class="">3.7%</td><td class="">2.3%</td><td class="">2.7%</td><td class="">3.9%</td></tr><tr><td class="lead"><span class="leadwrap"><span class="pname"><span class="sw" style="background:var(--p-modify)"></span>ModifyHealth</span><button class="toggle" id="cancel-mh-toggle" aria-label="Toggle ModifyHealth sub-programs" aria-expanded="false">+</button></span></td><td class="">4.0%</td><td class="">3.8%</td><td class="">3.0%</td><td class="">4.8%</td><td class="">5.4%</td></tr><tr class="cancel-mh-child" hidden=""><td class="lead child"><span class="subname">HA</span></td><td>3.0%</td><td>4.7%</td><td>3.8%</td><td>3.5%</td><td>5.2%</td></tr><tr class="cancel-mh-child" hidden=""><td class="lead child"><span class="subname">HVCC</span></td><td>4.0%</td><td>4.7%</td><td>3.6%</td><td>4.7%</td><td>6.0%</td></tr><tr class="cancel-mh-child" hidden=""><td class="lead child"><span class="subname">SOMOS</span></td><td>4.4%</td><td>3.9%</td><td>3.3%</td><td>5.4%</td><td>5.8%</td></tr><tr class="cancel-mh-child" hidden=""><td class="lead child"><span class="subname">FLIPA</span></td><td>3.9%</td><td>2.7%</td><td>3.1%</td><td>5.4%</td><td>4.9%</td></tr><tr class="cancel-mh-child" hidden=""><td class="lead child"><span class="subname">HEALI</span></td><td>3.5%</td><td>2.5%</td><td>4.2%</td><td>6.1%</td><td>5.5%</td></tr><tr class="cancel-mh-child" hidden=""><td class="lead child"><span class="subname">PHS</span></td><td>2.9%</td><td>3.0%</td><td>5.5%</td><td>6.4%</td><td>6.3%</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-somos)"></span>SOMOS</span></td><td class="">3.6%</td><td class="">2.5%</td><td class="">2.5%</td><td class="">4.8%</td><td class="">4.5%</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-hvcc)"></span>HVCC</span></td><td class="">4.1%</td><td class="">4.7%</td><td class="">3.7%</td><td class="">5.0%</td><td class="">6.2%</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-cd)"></span>CDChoices</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-act)"></span>ACT Care</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td></tr></tbody><tfoot><tr><td class="lead">Blended</td><td>2.8%</td><td>4.1%</td><td>3.0%</td><td>3.3%</td><td>4.8%</td></tr></tfoot></table>
       </div>
     </div>
 
@@ -381,7 +362,7 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <table id="cancel-ft-tbl"></table>
+        <table id="cancel-ft-tbl"><thead><tr><th class="lead">Type</th><th>Q2 '25</th><th>Q3 '25</th><th>Q4 '25</th><th>Q1 '26</th><th>Q2 '26 QTD</th></tr></thead><tbody><tr><td class="lead"><span class="pname"><span class="sw" style="background:#D8B25A"></span>Box</span></td><td>3.5%</td><td>5.4%</td><td>4.7%</td><td>4.6%</td><td>6.5%</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:#3E9B6E"></span>Voucher credit</span></td><td>3.3%</td><td>3.5%</td><td>2.2%</td><td>3.4%</td><td>4.2%</td></tr></tbody></table>
       </div>
       <div class="card">
         <div class="card-head">
@@ -393,7 +374,7 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <table id="cancel-fp-tbl"></table>
+        <table id="cancel-fp-tbl"><thead><tr><th class="lead">Partner</th><th>Q2 '25</th><th>Q3 '25</th><th>Q4 '25</th><th>Q1 '26</th><th>Q2 '26 QTD</th></tr></thead><tbody><tr><td class="lead"><span class="pname"><span class="sw" style="background:#6E8CA8"></span>Morrissey Market</span></td><td>3.2%</td><td>5.1%</td><td>4.3%</td><td>4.2%</td><td>6.0%</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:#B5895A"></span>EA Fresh</span></td><td>3.4%</td><td>3.6%</td><td>2.4%</td><td>3.7%</td><td>4.5%</td></tr></tbody></table>
       </div>
     </div>
   </section>
@@ -413,7 +394,7 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <div class="ratechart" id="issue-chart"></div>
+        <div class="ratechart" id="issue-chart"><div class="rc-plot"><div class="rc-bars"><div class="rcol"><span class="rv">1.27%</span><div class="rbar" style="height:140.7px;background:var(--green)"></div></div><div class="rcol"><span class="rv">1.4%</span><div class="rbar" style="height:155.1px;background:var(--green)"></div></div><div class="rcol"><span class="rv">1.35%</span><div class="rbar" style="height:149.6px;background:var(--green)"></div></div><div class="rcol"><span class="rv">1.39%</span><div class="rbar" style="height:154.0px;background:var(--green)"></div></div><div class="rcol current"><span class="rv">1.53%</span><div class="rbar" style="height:169.5px;background:var(--green)"></div></div></div></div><div class="rc-xlabels"><span class="rl">Q2 '25</span><span class="rl">Q3 '25</span><span class="rl">Q4 '25</span><span class="rl">Q1 '26</span><span class="rl current">Q2 '26 QTD</span></div></div>
       </div>
 
       <div class="card">
@@ -426,28 +407,768 @@
             <option value="daily">Daily</option>
           </select>
         </div>
-        <table id="issue-tbl"></table>
+        <table id="issue-tbl"><thead><tr><th class="lead">Program</th><th>Q2 '25</th><th>Q3 '25</th><th>Q4 '25</th><th>Q1 '26</th><th>Q2 '26 QTD</th></tr></thead><tbody><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-sipps)"></span>SIPPS</span></td><td class="">1.13%</td><td class="">1.24%</td><td class="">1.2%</td><td class="">1.27%</td><td class="">1.4%</td></tr><tr><td class="lead"><span class="leadwrap"><span class="pname"><span class="sw" style="background:var(--p-modify)"></span>ModifyHealth</span><button class="toggle" id="issue-mh-toggle" aria-label="Toggle ModifyHealth sub-programs" aria-expanded="false">+</button></span></td><td class="">1.32%</td><td class="">1.36%</td><td class="">1.35%</td><td class="">1.51%</td><td class="">1.6%</td></tr><tr class="issue-mh-child" hidden=""><td class="lead child"><span class="subname">HA</span></td><td>1.2%</td><td>1.35%</td><td>1.33%</td><td>1.35%</td><td>1.5%</td></tr><tr class="issue-mh-child" hidden=""><td class="lead child"><span class="subname">HVCC</span></td><td>1.55%</td><td>1.66%</td><td>1.64%</td><td>1.76%</td><td>1.9%</td></tr><tr class="issue-mh-child" hidden=""><td class="lead child"><span class="subname">SOMOS</span></td><td>1.19%</td><td>1.21%</td><td>1.18%</td><td>1.33%</td><td>1.4%</td></tr><tr class="issue-mh-child" hidden=""><td class="lead child"><span class="subname">FLIPA</span></td><td>1.43%</td><td>1.41%</td><td>1.45%</td><td>1.66%</td><td>1.7%</td></tr><tr class="issue-mh-child" hidden=""><td class="lead child"><span class="subname">HEALI</span></td><td>1.1%</td><td>1.05%</td><td>1.14%</td><td>1.31%</td><td>1.3%</td></tr><tr class="issue-mh-child" hidden=""><td class="lead child"><span class="subname">PHS</span></td><td>1.56%</td><td>1.58%</td><td>1.78%</td><td>1.97%</td><td>2%</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-somos)"></span>SOMOS</span></td><td class="">0.93%</td><td class="">0.88%</td><td class="">0.9%</td><td class="">1.08%</td><td class="">1.1%</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-hvcc)"></span>HVCC</span></td><td class="">1.45%</td><td class="">1.55%</td><td class="">1.53%</td><td class="">1.66%</td><td class="">1.8%</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-cd)"></span>CDChoices</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td></tr><tr><td class="lead"><span class="pname"><span class="sw" style="background:var(--p-act)"></span>ACT Care</span></td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td><td class="ztext">–</td></tr></tbody><tfoot><tr><td class="lead">Blended</td><td>1.27%</td><td>1.4%</td><td>1.35%</td><td>1.39%</td><td>1.53%</td></tr></tfoot></table>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6 · TURNAROUND TIME (TAT) — from Teana 6/12 ===================== -->
+  <section class="section">
+    <div class="sec-head"><span class="sec-num">6.</span><span class="sec-title">NY Medicaid Referral Turnaround Time</span></div>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">Turnaround Time (TAT) Distribution</span>
+        <span class="card-tag">14-day conversion window</span>
+      </div>
+      <div class="tat-desc">Days from Case Created to Converted Referral Date, positive values only. The window should cover the tail — where conversions stop arriving — not just the average.</div>
+      <div class="tat-wrap" id="tat"><div class="tat-row"><div></div><div></div><div class="tat-track" style="height:16px"><span style="position:absolute;left:10.85%;top:0;font-size:10.5px;color:var(--muted);font-weight:600;white-space:nowrap;padding-left:5px">14-day window</span></div></div><div class="tat-row"><div class="tat-name">Average (mean)</div><div class="tat-num">2.9d</div><div class="tat-track"><div class="tat-fill" style="width:2.25%"></div><div class="tat-goal" style="left:10.85%"></div></div></div><div class="tat-row"><div class="tat-name">Median (P50)</div><div class="tat-num">1d</div><div class="tat-track"><div class="tat-fill" style="width:1.00%"></div><div class="tat-goal" style="left:10.85%"></div></div></div><div class="tat-row"><div class="tat-name">75th percentile</div><div class="tat-num">4d</div><div class="tat-track"><div class="tat-fill" style="width:3.10%"></div><div class="tat-goal" style="left:10.85%"></div></div></div><div class="tat-row"><div class="tat-name">90th percentile</div><div class="tat-num">7d</div><div class="tat-track"><div class="tat-fill" style="width:5.43%"></div><div class="tat-goal" style="left:10.85%"></div></div></div><div class="tat-row"><div class="tat-name">95th percentile</div><div class="tat-num">12d</div><div class="tat-track"><div class="tat-fill" style="width:9.30%"></div><div class="tat-goal" style="left:10.85%"></div></div></div><div class="tat-row"><div class="tat-name">99th percentile</div><div class="tat-num">23d</div><div class="tat-track"><div class="tat-fill" style="width:17.83%"></div><div class="tat-goal" style="left:10.85%"></div></div></div><div class="tat-row"><div class="tat-name">Max</div><div class="tat-num">129d</div><div class="tat-track"><div class="tat-fill" style="width:100.00%"></div><div class="tat-goal" style="left:10.85%"></div></div></div></div>
+      <div class="tat-foot">If the 95th percentile sits well below the 14-day window, the window is padded — it could be shortened to report weeks sooner without losing converters.</div>
     </div>
   </section>
 
 </div>
 
 <script>
-  /* TAT distribution - Teana addition. Real figures from her tool. */
-  (function(){
-    var rows=[["Average (mean)",2.9],["Median (P50)",1],["75th percentile",4],["90th percentile",7],["95th percentile",12],["99th percentile",23],["Max",129]];
-    var mx=Math.sqrt(129), win=(Math.sqrt(14)/mx*100).toFixed(1);
-    var el=document.getElementById("tat-dist");
-    if(!el) return;
-    el.innerHTML=rows.map(function(r){
-      var w=(Math.sqrt(r[1])/mx*100).toFixed(1);
-      var val=(r[1]%1===0?r[1]:r[1].toFixed(1));
-      var d=val+"d";
-      return '<div class="tat-row"><span class="tat-lbl">'+r[0]+'</span><span class="tat-day">'+val+'</span><span class="tat-bar"><span class="fillv" style="width:'+w+'%">'+d+'</span><span class="tat-win" style="left:'+win+'%"></span></span></div>';
+  /* ============================================================
+     SECTION 1 — Referrals Received (interactive)
+     ============================================================ */
+  const programs = [
+    {name:"SIPPS",       color:"var(--p-sipps)"},
+    {name:"ModifyHealth",color:"var(--p-modify)"},
+    {name:"SOMOS",       color:"var(--p-somos)"},
+    {name:"HVCC",        color:"var(--p-hvcc)"},
+    {name:"CDChoices",   color:"var(--p-cd)"},
+    {name:"ACT Care",    color:"var(--p-act)"},
+  ];
+  const shares = [0.534, 0.328, 0.085, 0.043, 0.0095, 0.0015];
+
+  const quarterly = [
+    {label:"Q2 '25",     vals:[40,   180,  25, 15,  0,  0]},
+    {label:"Q3 '25",     vals:[110,  250,  45, 26,  0,  0]},
+    {label:"Q4 '25",     vals:[1200, 1000, 250,165, 0,  0]},
+    {label:"Q1 '26",     vals:[2400, 1800, 420,230, 50, 0]},
+    {label:"Q2 '26 QTD", vals:[3500, 2150, 560,280, 62, 10]},
+  ];
+  function gen(count, labels, baseT, finalT){
+    const cdFrom = Math.floor(count*0.5), actFrom = Math.floor(count*0.75);
+    return labels.slice(0,count).map((label,i)=>{
+      const t = baseT + (finalT-baseT)*(count>1 ? i/(count-1) : 0);
+      const vals = shares.map((s,pi)=>{
+        if(pi===4 && i<cdFrom) return 0;
+        if(pi===5 && i<actFrom) return 0;
+        const noise = 1 + 0.16*Math.sin(i*1.3 + pi*2.1);
+        return Math.max(0, Math.round(t*s*noise));
+      });
+      return {label, vals};
+    });
+  }
+  const monthLabels = ["Jan '26","Feb '26","Mar '26","Apr '26","May '26","Jun '26"];
+  const weekLabels  = ["Apr 13","Apr 20","Apr 27","May 4","May 11","May 18","May 25","Jun 1"];
+  const dayLabels   = (()=>{ const out=[], end=new Date(2026,5,1);
+    for(let i=13;i>=0;i--){const d=new Date(end); d.setDate(end.getDate()-i);
+      out.push((d.getMonth()+1)+"/"+d.getDate());} return out; })();
+  const DATA = {
+    quarterly,
+    monthly: gen(6,  monthLabels, 1450, 2400),
+    weekly:  gen(8,  weekLabels,  380,  640),
+    daily:   gen(14, dayLabels,   52,   104),
+  };
+
+  const fmt = n => n.toLocaleString("en-US");
+  const totalOf = p => p.vals.reduce((a,b)=>a+b,0);
+  const PLOT = 200;
+
+  const MH_INDEX = programs.findIndex(p => p.name === "ModifyHealth");
+  const mhSubs = [
+    {name:"HA"}, {name:"HVCC",prop:0.0673}, {name:"SOMOS",prop:0.120},
+    {name:"FLIPA",prop:0.0658}, {name:"HEALI",prop:0.00052}, {name:"PHS",prop:0.0019},
+  ];
+  function splitMH(mh){
+    const others = mhSubs.slice(1).map(s => Math.round(mh * s.prop));
+    const ha = Math.max(0, mh - others.reduce((a,b)=>a+b,0));
+    return [ha, ...others];
+  }
+  let mhExpanded = false;
+  function applyMhState(){
+    document.querySelectorAll(".mh-child").forEach(r => r.hidden = !mhExpanded);
+    const t = document.getElementById("mh-toggle");
+    if(t){ t.textContent = mhExpanded ? "−" : "+"; t.setAttribute("aria-expanded", mhExpanded); }
+  }
+
+  function renderChart(periods){
+    const chart = document.getElementById("chart");
+    chart.innerHTML = "";
+    const maxTotal = Math.max(...periods.map(totalOf), 1);
+    periods.forEach((q,qi)=>{
+      const col = document.createElement("div");
+      col.className = "col" + (qi===periods.length-1 ? " current":"");
+      const tot = totalOf(q);
+      const bar = document.createElement("div");
+      bar.className = "bar";
+      bar.style.height = (tot/maxTotal*PLOT) + "px";
+      for(let pi=programs.length-1; pi>=0; pi--){
+        const v = q.vals[pi]; if(v<=0) continue;
+        const seg = document.createElement("div");
+        seg.className = "seg";
+        seg.style.background = programs[pi].color;
+        seg.style.height = (v/tot*100) + "%";
+        seg.title = programs[pi].name + " — " + fmt(v);
+        bar.appendChild(seg);
+      }
+      col.innerHTML = `<div class="total">${fmt(tot)}</div>`;
+      col.appendChild(bar);
+      const ql = document.createElement("div");
+      ql.className = "qlabel"; ql.textContent = q.label;
+      col.appendChild(ql);
+      chart.appendChild(col);
+    });
+  }
+
+  const legend = document.getElementById("legend");
+  programs.forEach(p=>{
+    const el = document.createElement("div");
+    el.className = "lg";
+    el.innerHTML = `<span class="sw" style="background:${p.color}"></span>${p.name}`;
+    legend.appendChild(el);
+  });
+
+  function renderTable(periods){
+    const tbl = document.getElementById("tbl");
+    let head = `<thead><tr><th class="lead">Program</th>`;
+    periods.forEach(q=> head += `<th>${q.label}</th>`);
+    head += `</tr></thead>`;
+    let body = "<tbody>";
+    programs.forEach((p,pi)=>{
+      let cells = "";
+      periods.forEach(q=>{
+        const v = q.vals[pi];
+        cells += `<td class="${v===0?'ztext':''}">${v===0?'–':fmt(v)}</td>`;
+      });
+      if(pi === MH_INDEX){
+        body += `<tr><td class="lead"><span class="leadwrap"><span class="pname"><span class="sw" style="background:${p.color}"></span>${p.name}</span><button class="toggle" id="mh-toggle" aria-label="Toggle ModifyHealth sub-programs">+</button></span></td>${cells}</tr>`;
+        const splits = periods.map(q => splitMH(q.vals[pi]));
+        mhSubs.forEach((s,si)=>{
+          let ccells = "";
+          periods.forEach((q,qi)=>{
+            const cv = splits[qi][si];
+            ccells += `<td class="${cv===0?'ztext':''}">${cv===0?'–':fmt(cv)}</td>`;
+          });
+          body += `<tr class="mh-child" hidden><td class="lead child"><span class="subname">${s.name}</span></td>${ccells}</tr>`;
+        });
+      } else {
+        body += `<tr><td class="lead"><span class="pname"><span class="sw" style="background:${p.color}"></span>${p.name}</span></td>${cells}</tr>`;
+      }
+    });
+    body += "</tbody>";
+    let foot = `<tfoot><tr><td class="lead">Total</td>`;
+    periods.forEach(q=> foot += `<td>${fmt(totalOf(q))}</td>`);
+    foot += `</tr></tfoot>`;
+    tbl.innerHTML = head + body + foot;
+    const t = document.getElementById("mh-toggle");
+    if(t) t.addEventListener("click", ()=>{ mhExpanded = !mhExpanded; applyMhState(); });
+    applyMhState();
+  }
+
+  document.getElementById("chart-period").addEventListener("change", e => renderChart(DATA[e.target.value]));
+  document.getElementById("tbl-period").addEventListener("change", e => renderTable(DATA[e.target.value]));
+  renderChart(DATA.quarterly);
+  renderTable(DATA.quarterly);
+
+  /* ============================================================
+     SECTION 2 — Referral Conversion Rate (14 Days)
+     Bar chart = blended rate per period (goal 85%);
+     table = rate per program, ModifyHealth expandable.
+     Rates are blended (weighted), never summed.
+     ============================================================ */
+  const convDefs = [
+    {base:87.0,  ramp:9,  seed:0.4},  // SIPPS
+    {base:85.0,  ramp:10, seed:1.1},  // ModifyHealth
+    {base:100.0, ramp:6,  seed:2.0},  // SOMOS
+    {base:92.3,  ramp:8,  seed:0.7},  // HVCC
+    null,                             // CDChoices  (no conversion data yet)
+    null,                             // ACT Care   (no conversion data yet)
+  ];
+  const mhRateDefs = [
+    {base:84, ramp:9},  {base:88, ramp:8},  {base:91, ramp:6},   // HA, HVCC, SOMOS
+    {base:80, ramp:11}, {base:86, ramp:7},  {base:78, ramp:12},  // FLIPA, HEALI, PHS
+  ];
+  const convBlended = {base:82.8, ramp:11, seed:0.2};
+
+  function genRate(count, base, ramp, seed){
+    const out = [];
+    for(let i=0;i<count;i++){
+      const t = count>1 ? i/(count-1) : 1;
+      const r = base - ramp*(1-t) + 1.2*Math.sin(i*1.7 + seed);
+      out.push(Math.round(Math.max(0, Math.min(100, r))*10)/10);
+    }
+    out[count-1] = base; // anchor latest period to the known value
+    return out;
+  }
+  function buildConv(count, labels){
+    return {
+      labels,
+      blended:  genRate(count, convBlended.base, convBlended.ramp, convBlended.seed),
+      rates:    convDefs.map(d => d ? genRate(count, d.base, d.ramp, d.seed) : null),
+      subRates: mhRateDefs.map((d,si)=> genRate(count, d.base, d.ramp, si*0.6)),
+    };
+  }
+  const CONV = {
+    quarterly: buildConv(5,  quarterly.map(q=>q.label)),
+    monthly:   buildConv(6,  monthLabels),
+    weekly:    buildConv(8,  weekLabels),
+    daily:     buildConv(14, dayLabels),
+  };
+  const pct = r => r.toFixed(1) + "%";
+
+  function renderConvChart(d){
+    const host = document.getElementById("conv-chart");
+    const GOAL = 85, PLOTH = 200;
+    const bars = d.blended.map((r,i)=>{
+      const cls = r>=GOAL ? "hit" : "miss";
+      const cur = i===d.blended.length-1 ? " current" : "";
+      return `<div class="rcol${cur}"><span class="rv">${pct(r)}</span><div class="rbar ${cls}" style="height:${(r/100*PLOTH).toFixed(1)}px"></div></div>`;
     }).join("");
-    el.insertAdjacentHTML("afterend",'<div class="tat-note"><span class="win"></span> Dashed line marks the 14-day conversion window. The 95th percentile (12d) falls inside it; the 99th (23d) and max (129d) sit in the tail beyond.</div>');
+    const xl = d.labels.map((l,i)=>`<span class="rl${i===d.labels.length-1?' current':''}">${l}</span>`).join("");
+    host.innerHTML =
+      `<div class="rc-plot"><div class="rc-bars">${bars}</div></div><div class="rc-xlabels">${xl}</div>`;
+  }
+
+  let convMhExpanded = false;
+  function applyConvMhState(){
+    document.querySelectorAll(".conv-mh-child").forEach(r => r.hidden = !convMhExpanded);
+    const t = document.getElementById("conv-mh-toggle");
+    if(t){ t.textContent = convMhExpanded ? "−" : "+"; t.setAttribute("aria-expanded", convMhExpanded); }
+  }
+  function renderConvTable(d){
+    const tbl = document.getElementById("conv-tbl");
+    let head = `<thead><tr><th class="lead">Program</th>`;
+    d.labels.forEach(l=> head += `<th>${l}</th>`);
+    head += `</tr></thead>`;
+    let body = "<tbody>";
+    programs.forEach((p,pi)=>{
+      const series = d.rates[pi];
+      let cells = "";
+      d.labels.forEach((l,qi)=>{
+        const v = series ? series[qi] : null;
+        cells += `<td class="${v==null?'ztext':''}">${v==null?'–':pct(v)}</td>`;
+      });
+      if(pi === MH_INDEX){
+        body += `<tr><td class="lead"><span class="leadwrap"><span class="pname"><span class="sw" style="background:${p.color}"></span>${p.name}</span><button class="toggle" id="conv-mh-toggle" aria-label="Toggle ModifyHealth sub-programs">+</button></span></td>${cells}</tr>`;
+        mhSubs.forEach((s,si)=>{
+          let ccells = "";
+          d.labels.forEach((l,qi)=> ccells += `<td>${pct(d.subRates[si][qi])}</td>`);
+          body += `<tr class="conv-mh-child" hidden><td class="lead child"><span class="subname">${s.name}</span></td>${ccells}</tr>`;
+        });
+      } else {
+        body += `<tr><td class="lead"><span class="pname"><span class="sw" style="background:${p.color}"></span>${p.name}</span></td>${cells}</tr>`;
+      }
+    });
+    body += "</tbody>";
+    let foot = `<tfoot><tr><td class="lead">Blended</td>`;
+    d.blended.forEach(r=> foot += `<td>${pct(r)}</td>`);
+    foot += `</tr></tfoot>`;
+    tbl.innerHTML = head + body + foot;
+    const t = document.getElementById("conv-mh-toggle");
+    if(t) t.addEventListener("click", ()=>{ convMhExpanded = !convMhExpanded; applyConvMhState(); });
+    applyConvMhState();
+  }
+
+  renderConvChart(CONV.quarterly);
+  renderConvTable(CONV.quarterly);
+
+  /* ============================================================
+     SECTION 3 — Members Served (stacked by program + table)
+     Illustrative program splits; quarter totals match source,
+     and Q2 '26 program figures match the By-SCN numbers (=11,577).
+     ============================================================ */
+  const membShares = [0.455, 0.499, 0.033, 0.013, 0.0006, 0];
+  const membQuarters = [
+    {label:"Q2 '25",     vals:[50,   110,  12,  8,   0, 0]},
+    {label:"Q3 '25",     vals:[200,  360,  35,  21,  0, 0]},
+    {label:"Q4 '25",     vals:[1500, 1450, 130, 78,  0, 0]},
+    {label:"Q1 '26",     vals:[3600, 3800, 200, 110, 1, 0]},
+    {label:"Q2 '26 QTD", vals:[5267, 5778, 382, 149, 1, 0]},
+  ];
+  function genMemb(count, labels, baseT, finalT){
+    const cdFrom = Math.floor(count*0.5);
+    return labels.slice(0,count).map((label,i)=>{
+      const t = baseT + (finalT-baseT)*(count>1 ? i/(count-1) : 0);
+      const vals = membShares.map((s,pi)=>{
+        if(pi===4 && i<cdFrom) return 0;  // CDChoices appears later
+        if(pi===5) return 0;              // ACT Care: no members yet
+        const noise = 1 + 0.14*Math.sin(i*1.2 + pi*1.9);
+        return Math.max(0, Math.round(t*s*noise));
+      });
+      return {label, vals};
+    });
+  }
+  const MEMB = {
+    quarterly: membQuarters,
+    monthly:   genMemb(6,  monthLabels, 2900, 4200),
+    weekly:    genMemb(8,  weekLabels,  720,  1050),
+    daily:     genMemb(14, dayLabels,   100,  165),
+  };
+
+  function renderMembChart(periods){
+    const chart = document.getElementById("memb-chart");
+    chart.innerHTML = "";
+    const maxTotal = Math.max(...periods.map(totalOf), 1);
+    periods.forEach((q,qi)=>{
+      const col = document.createElement("div");
+      col.className = "col" + (qi===periods.length-1 ? " current":"");
+      const tot = totalOf(q);
+      const bar = document.createElement("div");
+      bar.className = "bar";
+      bar.style.height = (tot/maxTotal*PLOT) + "px";
+      for(let pi=programs.length-1; pi>=0; pi--){
+        const v = q.vals[pi]; if(v<=0) continue;
+        const seg = document.createElement("div");
+        seg.className = "seg";
+        seg.style.background = programs[pi].color;
+        seg.style.height = (v/tot*100) + "%";
+        seg.title = programs[pi].name + " — " + fmt(v);
+        bar.appendChild(seg);
+      }
+      col.innerHTML = `<div class="total">${fmt(tot)}</div>`;
+      col.appendChild(bar);
+      const ql = document.createElement("div");
+      ql.className = "qlabel"; ql.textContent = q.label;
+      col.appendChild(ql);
+      chart.appendChild(col);
+    });
+  }
+
+  const mLegend = document.getElementById("memb-legend");
+  programs.forEach(p=>{
+    const el = document.createElement("div");
+    el.className = "lg";
+    el.innerHTML = `<span class="sw" style="background:${p.color}"></span>${p.name}`;
+    mLegend.appendChild(el);
+  });
+
+  let membMhExpanded = false;
+  function applyMembMhState(){
+    document.querySelectorAll(".memb-mh-child").forEach(r => r.hidden = !membMhExpanded);
+    const t = document.getElementById("memb-mh-toggle");
+    if(t){ t.textContent = membMhExpanded ? "−" : "+"; t.setAttribute("aria-expanded", membMhExpanded); }
+  }
+  function renderMembTable(periods){
+    const tbl = document.getElementById("memb-tbl");
+    let head = `<thead><tr><th class="lead">Program</th>`;
+    periods.forEach(q=> head += `<th>${q.label}</th>`);
+    head += `</tr></thead>`;
+    let body = "<tbody>";
+    programs.forEach((p,pi)=>{
+      let cells = "";
+      periods.forEach(q=>{
+        const v = q.vals[pi];
+        cells += `<td class="${v===0?'ztext':''}">${v===0?'–':fmt(v)}</td>`;
+      });
+      if(pi === MH_INDEX){
+        body += `<tr><td class="lead"><span class="leadwrap"><span class="pname"><span class="sw" style="background:${p.color}"></span>${p.name}</span><button class="toggle" id="memb-mh-toggle" aria-label="Toggle ModifyHealth sub-programs">+</button></span></td>${cells}</tr>`;
+        const splits = periods.map(q => splitMH(q.vals[pi]));
+        mhSubs.forEach((s,si)=>{
+          let ccells = "";
+          periods.forEach((q,qi)=>{
+            const cv = splits[qi][si];
+            ccells += `<td class="${cv===0?'ztext':''}">${cv===0?'–':fmt(cv)}</td>`;
+          });
+          body += `<tr class="memb-mh-child" hidden><td class="lead child"><span class="subname">${s.name}</span></td>${ccells}</tr>`;
+        });
+      } else {
+        body += `<tr><td class="lead"><span class="pname"><span class="sw" style="background:${p.color}"></span>${p.name}</span></td>${cells}</tr>`;
+      }
+    });
+    body += "</tbody>";
+    let foot = `<tfoot><tr><td class="lead">Total</td>`;
+    periods.forEach(q=> foot += `<td>${fmt(totalOf(q))}</td>`);
+    foot += `</tr></tfoot>`;
+    tbl.innerHTML = head + body + foot;
+    const t = document.getElementById("memb-mh-toggle");
+    if(t) t.addEventListener("click", ()=>{ membMhExpanded = !membMhExpanded; applyMembMhState(); });
+    applyMembMhState();
+  }
+
+  document.getElementById("memb-chart-period").addEventListener("change", e => renderMembChart(MEMB[e.target.value]));
+  document.getElementById("memb-tbl-period").addEventListener("change", e => renderMembTable(MEMB[e.target.value]));
+  renderMembChart(MEMB.quarterly);
+  renderMembTable(MEMB.quarterly);
+
+  /* ============================================================
+     SECTION 3 — By Fulfillment Type (stacked by type, per period)
+     Illustrative; Q2 '26 matches source (Voucher 4,078 / Box 823).
+     ============================================================ */
+  const ftTypes = [
+    {name:"Voucher credit", color:"#3E9B6E"},
+    {name:"Box",            color:"#D8B25A"},
+  ];
+  const ftQuarters = [
+    {label:"Q2 '25",     vals:[90,   20]},
+    {label:"Q3 '25",     vals:[260,  60]},
+    {label:"Q4 '25",     vals:[1150, 280]},
+    {label:"Q1 '26",     vals:[2700, 600]},
+    {label:"Q2 '26 QTD", vals:[4078, 823]},
+  ];
+  function genFt(count, labels, baseT, finalT){
+    const sh = [0.832, 0.168]; // voucher / box
+    return labels.slice(0,count).map((label,i)=>{
+      const t = baseT + (finalT-baseT)*(count>1 ? i/(count-1) : 0);
+      const vals = sh.map((s,pi)=>{
+        const noise = 1 + 0.12*Math.sin(i*1.4 + pi*2.3);
+        return Math.max(0, Math.round(t*s*noise));
+      });
+      return {label, vals};
+    });
+  }
+  const FT = {
+    quarterly: ftQuarters,
+    monthly:   genFt(6,  monthLabels, 1100, 1700),
+    weekly:    genFt(8,  weekLabels,  270,  420),
+    daily:     genFt(14, dayLabels,   38,   62),
+  };
+  function renderFtTable(periods){
+    const tbl = document.getElementById("ft-tbl");
+    const tot = p => p.vals.reduce((a,b)=>a+b,0);
+    let head = `<thead><tr><th class="lead">Type</th>`;
+    periods.forEach(q=> head += `<th>${q.label}</th>`);
+    head += `</tr></thead>`;
+    let body = "<tbody>";
+    ftTypes.forEach((t,ti)=>{
+      let cells = "";
+      periods.forEach(q=> cells += `<td>${fmt(q.vals[ti])}</td>`);
+      body += `<tr><td class="lead"><span class="pname"><span class="sw" style="background:${t.color}"></span>${t.name}</span></td>${cells}</tr>`;
+    });
+    body += "</tbody>";
+    let foot = `<tfoot><tr><td class="lead">Total</td>`;
+    periods.forEach(q=> foot += `<td>${fmt(tot(q))}</td>`);
+    foot += `</tr></tfoot>`;
+    tbl.innerHTML = head + body + foot;
+  }
+  document.getElementById("ft-period").addEventListener("change", e => renderFtTable(FT[e.target.value]));
+  renderFtTable(FT.quarterly);
+
+  /* ============================================================
+     SECTION 3 — By Box Fulfillment Partner (per-period table)
+     Illustrative; Q2 '26 matches source (Morrissey 2,100 / EA 1,500).
+     ============================================================ */
+  const fpPartners = [
+    {name:"Morrissey Market", color:"#6E8CA8"},
+    {name:"EA Fresh",         color:"#B5895A"},
+  ];
+  const fpQuarters = [
+    {label:"Q2 '25",     vals:[60,   40]},
+    {label:"Q3 '25",     vals:[180,  120]},
+    {label:"Q4 '25",     vals:[850,  600]},
+    {label:"Q1 '26",     vals:[1500, 1050]},
+    {label:"Q2 '26 QTD", vals:[2100, 1500]},
+  ];
+  function genFp(count, labels, baseT, finalT){
+    const sh = [0.583, 0.417]; // Morrissey / EA Fresh
+    return labels.slice(0,count).map((label,i)=>{
+      const t = baseT + (finalT-baseT)*(count>1 ? i/(count-1) : 0);
+      const vals = sh.map((s,pi)=>{
+        const noise = 1 + 0.12*Math.sin(i*1.5 + pi*2.1);
+        return Math.max(0, Math.round(t*s*noise));
+      });
+      return {label, vals};
+    });
+  }
+  const FP = {
+    quarterly: fpQuarters,
+    monthly:   genFp(6,  monthLabels, 850, 1300),
+    weekly:    genFp(8,  weekLabels,  200, 320),
+    daily:     genFp(14, dayLabels,   28,  46),
+  };
+  function renderFpTable(periods){
+    const tbl = document.getElementById("fp-tbl");
+    const tot = p => p.vals.reduce((a,b)=>a+b,0);
+    let head = `<thead><tr><th class="lead">Partner</th>`;
+    periods.forEach(q=> head += `<th>${q.label}</th>`);
+    head += `</tr></thead>`;
+    let body = "<tbody>";
+    fpPartners.forEach((p,pi)=>{
+      let cells = "";
+      periods.forEach(q=> cells += `<td>${fmt(q.vals[pi])}</td>`);
+      body += `<tr><td class="lead"><span class="pname"><span class="sw" style="background:${p.color}"></span>${p.name}</span></td>${cells}</tr>`;
+    });
+    body += "</tbody>";
+    let foot = `<tfoot><tr><td class="lead">Total</td>`;
+    periods.forEach(q=> foot += `<td>${fmt(tot(q))}</td>`);
+    foot += `</tr></tfoot>`;
+    tbl.innerHTML = head + body + foot;
+  }
+  document.getElementById("fp-period").addEventListener("change", e => renderFpTable(FP[e.target.value]));
+  renderFpTable(FP.quarterly);
+
+  /* ============================================================
+     SECTION 4 — Member Cancel Rate (structure mirrors §3; rate
+     semantics like §2). Goal is under 3% — over = red (miss).
+     Rates are blended (weighted), never summed.
+     ============================================================ */
+  const CANCEL_GOAL = 3;
+  const cancelDefs = [
+    {base:3.9, ramp:1.6, seed:0.5},  // SIPPS
+    {base:5.4, ramp:2.5, seed:1.2},  // ModifyHealth
+    {base:4.5, ramp:2.0, seed:1.9},  // SOMOS
+    {base:6.2, ramp:3.0, seed:0.8},  // HVCC
+    null, null,                       // CDChoices, ACT Care
+  ];
+  const cancelMhDefs = [
+    {base:5.2, ramp:2.2},{base:6.0, ramp:2.8},{base:5.8, ramp:2.6},  // HA, HVCC, SOMOS
+    {base:4.9, ramp:2.0},{base:5.5, ramp:2.4},{base:6.3, ramp:3.0},  // FLIPA, HEALI, PHS
+  ];
+  const cancelBlended = {base:4.8, ramp:2.4, seed:0.3};
+  function buildCancel(count, labels){
+    return {
+      labels,
+      blended:  genRate(count, cancelBlended.base, cancelBlended.ramp, cancelBlended.seed),
+      rates:    cancelDefs.map(d => d ? genRate(count, d.base, d.ramp, d.seed) : null),
+      subRates: cancelMhDefs.map((d,si)=> genRate(count, d.base, d.ramp, si*0.7)),
+    };
+  }
+  const CANCEL = {
+    quarterly: buildCancel(5,  quarterly.map(q=>q.label)),
+    monthly:   buildCancel(6,  monthLabels),
+    weekly:    buildCancel(8,  weekLabels),
+    daily:     buildCancel(14, dayLabels),
+  };
+
+  function renderCancelChart(d){
+    const host = document.getElementById("cancel-chart");
+    const PLOTH = 200;
+    const maxV = Math.max(...d.blended) * 1.18;
+    const bars = d.blended.map((r,i)=>{
+      const cur = i===d.blended.length-1 ? " current" : "";
+      return `<div class="rcol${cur}"><span class="rv">${pct(r)}</span><div class="rbar" style="height:${(r/maxV*PLOTH).toFixed(1)}px;background:var(--green)"></div></div>`;
+    }).join("");
+    const xl = d.labels.map((l,i)=>`<span class="rl${i===d.labels.length-1?' current':''}">${l}</span>`).join("");
+    host.innerHTML = `<div class="rc-plot"><div class="rc-bars">${bars}</div></div><div class="rc-xlabels">${xl}</div>`;
+  }
+
+  let cancelMhExpanded = false;
+  function applyCancelMhState(){
+    document.querySelectorAll(".cancel-mh-child").forEach(r => r.hidden = !cancelMhExpanded);
+    const t = document.getElementById("cancel-mh-toggle");
+    if(t){ t.textContent = cancelMhExpanded ? "−" : "+"; t.setAttribute("aria-expanded", cancelMhExpanded); }
+  }
+  function renderCancelTable(d){
+    const tbl = document.getElementById("cancel-tbl");
+    let head = `<thead><tr><th class="lead">Program</th>`;
+    d.labels.forEach(l=> head += `<th>${l}</th>`);
+    head += `</tr></thead>`;
+    let body = "<tbody>";
+    programs.forEach((p,pi)=>{
+      const series = d.rates[pi];
+      let cells = "";
+      d.labels.forEach((l,qi)=>{
+        const v = series ? series[qi] : null;
+        cells += `<td class="${v==null?'ztext':''}">${v==null?'–':pct(v)}</td>`;
+      });
+      if(pi === MH_INDEX){
+        body += `<tr><td class="lead"><span class="leadwrap"><span class="pname"><span class="sw" style="background:${p.color}"></span>${p.name}</span><button class="toggle" id="cancel-mh-toggle" aria-label="Toggle ModifyHealth sub-programs">+</button></span></td>${cells}</tr>`;
+        mhSubs.forEach((s,si)=>{
+          let ccells = "";
+          d.labels.forEach((l,qi)=> ccells += `<td>${pct(d.subRates[si][qi])}</td>`);
+          body += `<tr class="cancel-mh-child" hidden><td class="lead child"><span class="subname">${s.name}</span></td>${ccells}</tr>`;
+        });
+      } else {
+        body += `<tr><td class="lead"><span class="pname"><span class="sw" style="background:${p.color}"></span>${p.name}</span></td>${cells}</tr>`;
+      }
+    });
+    body += "</tbody>";
+    let foot = `<tfoot><tr><td class="lead">Blended</td>`;
+    d.blended.forEach(r=> foot += `<td>${pct(r)}</td>`);
+    foot += `</tr></tfoot>`;
+    tbl.innerHTML = head + body + foot;
+    const t = document.getElementById("cancel-mh-toggle");
+    if(t) t.addEventListener("click", ()=>{ cancelMhExpanded = !cancelMhExpanded; applyCancelMhState(); });
+    applyCancelMhState();
+  }
+
+  // fulfillment-type & box-partner cancel rates (per period, blended not summed)
+  const cancelFt = [
+    {name:"Box",            color:"#D8B25A", base:6.5, ramp:3.0},
+    {name:"Voucher credit", color:"#3E9B6E", base:4.2, ramp:1.8},
+  ];
+  const cancelFp = [
+    {name:"Morrissey Market", color:"#6E8CA8", base:6.0, ramp:2.8},
+    {name:"EA Fresh",         color:"#B5895A", base:4.5, ramp:2.0},
+  ];
+  function buildRateRows(defs, count, labels){
+    return { labels, rows: defs.map((d,i)=> ({name:d.name, color:d.color, series:genRate(count, d.base, d.ramp, i*0.9)})) };
+  }
+  function rateSet(defs){
+    return {
+      quarterly: buildRateRows(defs, 5,  quarterly.map(q=>q.label)),
+      monthly:   buildRateRows(defs, 6,  monthLabels),
+      weekly:    buildRateRows(defs, 8,  weekLabels),
+      daily:     buildRateRows(defs, 14, dayLabels),
+    };
+  }
+  const CANCEL_FT = rateSet(cancelFt);
+  const CANCEL_FP = rateSet(cancelFp);
+  function renderRateRowTable(tblId, firstCol, d){
+    const tbl = document.getElementById(tblId);
+    let head = `<thead><tr><th class="lead">${firstCol}</th>`;
+    d.labels.forEach(l=> head += `<th>${l}</th>`);
+    head += `</tr></thead>`;
+    let body = "<tbody>";
+    d.rows.forEach(r=>{
+      const cells = r.series.map(v=>`<td>${pct(v)}</td>`).join("");
+      body += `<tr><td class="lead"><span class="pname"><span class="sw" style="background:${r.color}"></span>${r.name}</span></td>${cells}</tr>`;
+    });
+    body += "</tbody>";
+    tbl.innerHTML = head + body;
+  }
+
+  document.getElementById("cancel-chart-period").addEventListener("change", e => renderCancelChart(CANCEL[e.target.value]));
+  document.getElementById("cancel-tbl-period").addEventListener("change", e => renderCancelTable(CANCEL[e.target.value]));
+  document.getElementById("cancel-ft-period").addEventListener("change", e => renderRateRowTable("cancel-ft-tbl", "Type", CANCEL_FT[e.target.value]));
+  document.getElementById("cancel-fp-period").addEventListener("change", e => renderRateRowTable("cancel-fp-tbl", "Partner", CANCEL_FP[e.target.value]));
+  renderCancelChart(CANCEL.quarterly);
+  renderCancelTable(CANCEL.quarterly);
+  renderRateRowTable("cancel-ft-tbl", "Type", CANCEL_FT.quarterly);
+  renderRateRowTable("cancel-fp-tbl", "Partner", CANCEL_FP.quarterly);
+
+  /* ============================================================
+     SECTION 5 — Member Issue Rate (single-color chart + program table)
+     Goal under 1.5%; Q2 '26 anchors match source.
+     ============================================================ */
+  const ipct = r => (+r.toFixed(2)) + "%";
+  function genRateAmp(count, base, ramp, seed, amp){
+    const out = [];
+    for(let i=0;i<count;i++){
+      const t = count>1 ? i/(count-1) : 1;
+      const r = base - ramp*(1-t) + amp*Math.sin(i*1.7 + seed);
+      out.push(Math.round(Math.max(0,r)*100)/100);
+    }
+    out[count-1] = base;
+    return out;
+  }
+  const issueDefs = [
+    {base:1.4, ramp:0.30, seed:0.4},  // SIPPS
+    {base:1.6, ramp:0.35, seed:1.1},  // ModifyHealth
+    {base:1.1, ramp:0.25, seed:1.8},  // SOMOS
+    {base:1.8, ramp:0.40, seed:0.7},  // HVCC
+    null, null,                        // CDChoices, ACT Care
+  ];
+  const issueMhDefs = [
+    {base:1.5, ramp:0.30},{base:1.9, ramp:0.40},{base:1.4, ramp:0.28},  // HA, HVCC, SOMOS
+    {base:1.7, ramp:0.35},{base:1.3, ramp:0.25},{base:2.0, ramp:0.45},  // FLIPA, HEALI, PHS
+  ];
+  const issueBlended = {base:1.53, ramp:0.28, seed:0.2};
+  function buildIssue(count, labels){
+    return {
+      labels,
+      blended:  genRateAmp(count, issueBlended.base, issueBlended.ramp, issueBlended.seed, 0.08),
+      rates:    issueDefs.map(d => d ? genRateAmp(count, d.base, d.ramp, d.seed, 0.08) : null),
+      subRates: issueMhDefs.map((d,si)=> genRateAmp(count, d.base, d.ramp, si*0.6, 0.08)),
+    };
+  }
+  const ISSUE = {
+    quarterly: buildIssue(5,  quarterly.map(q=>q.label)),
+    monthly:   buildIssue(6,  monthLabels),
+    weekly:    buildIssue(8,  weekLabels),
+    daily:     buildIssue(14, dayLabels),
+  };
+
+  function renderIssueChart(d){
+    const host = document.getElementById("issue-chart");
+    const PLOTH = 200;
+    const maxV = Math.max(...d.blended) * 1.18;
+    const bars = d.blended.map((r,i)=>{
+      const cur = i===d.blended.length-1 ? " current" : "";
+      return `<div class="rcol${cur}"><span class="rv">${ipct(r)}</span><div class="rbar" style="height:${(r/maxV*PLOTH).toFixed(1)}px;background:var(--green)"></div></div>`;
+    }).join("");
+    const xl = d.labels.map((l,i)=>`<span class="rl${i===d.labels.length-1?' current':''}">${l}</span>`).join("");
+    host.innerHTML = `<div class="rc-plot"><div class="rc-bars">${bars}</div></div><div class="rc-xlabels">${xl}</div>`;
+  }
+
+  let issueMhExpanded = false;
+  function applyIssueMhState(){
+    document.querySelectorAll(".issue-mh-child").forEach(r => r.hidden = !issueMhExpanded);
+    const t = document.getElementById("issue-mh-toggle");
+    if(t){ t.textContent = issueMhExpanded ? "−" : "+"; t.setAttribute("aria-expanded", issueMhExpanded); }
+  }
+  function renderIssueTable(d){
+    const tbl = document.getElementById("issue-tbl");
+    let head = `<thead><tr><th class="lead">Program</th>`;
+    d.labels.forEach(l=> head += `<th>${l}</th>`);
+    head += `</tr></thead>`;
+    let body = "<tbody>";
+    programs.forEach((p,pi)=>{
+      const series = d.rates[pi];
+      let cells = "";
+      d.labels.forEach((l,qi)=>{
+        const v = series ? series[qi] : null;
+        cells += `<td class="${v==null?'ztext':''}">${v==null?'–':ipct(v)}</td>`;
+      });
+      if(pi === MH_INDEX){
+        body += `<tr><td class="lead"><span class="leadwrap"><span class="pname"><span class="sw" style="background:${p.color}"></span>${p.name}</span><button class="toggle" id="issue-mh-toggle" aria-label="Toggle ModifyHealth sub-programs">+</button></span></td>${cells}</tr>`;
+        mhSubs.forEach((s,si)=>{
+          let ccells = "";
+          d.labels.forEach((l,qi)=> ccells += `<td>${ipct(d.subRates[si][qi])}</td>`);
+          body += `<tr class="issue-mh-child" hidden><td class="lead child"><span class="subname">${s.name}</span></td>${ccells}</tr>`;
+        });
+      } else {
+        body += `<tr><td class="lead"><span class="pname"><span class="sw" style="background:${p.color}"></span>${p.name}</span></td>${cells}</tr>`;
+      }
+    });
+    body += "</tbody>";
+    let foot = `<tfoot><tr><td class="lead">Blended</td>`;
+    d.blended.forEach(r=> foot += `<td>${ipct(r)}</td>`);
+    foot += `</tr></tfoot>`;
+    tbl.innerHTML = head + body + foot;
+    const t = document.getElementById("issue-mh-toggle");
+    if(t) t.addEventListener("click", ()=>{ issueMhExpanded = !issueMhExpanded; applyIssueMhState(); });
+    applyIssueMhState();
+  }
+
+  document.getElementById("issue-chart-period").addEventListener("change", e => renderIssueChart(ISSUE[e.target.value]));
+  document.getElementById("issue-tbl-period").addEventListener("change", e => renderIssueTable(ISSUE[e.target.value]));
+  renderIssueChart(ISSUE.quarterly);
+  renderIssueTable(ISSUE.quarterly);
+
+  /* ============================================================
+     SECTION 6 — Turnaround Time (TAT) Distribution
+     Source: Teana, Product Roadmap Sync 06/12.
+     Days from Case Created to Converted Referral Date (positive only).
+     Bars scaled to Max (129d); dashed line marks the 14-day window.
+     ============================================================ */
+  const tatStats = [
+    {name:"Average (mean)", days:2.9},
+    {name:"Median (P50)",   days:1},
+    {name:"75th percentile",days:4},
+    {name:"90th percentile",days:7},
+    {name:"95th percentile",days:12},
+    {name:"99th percentile",days:23},
+    {name:"Max",            days:129},
+  ];
+  const TAT_WINDOW = 14;
+  (function renderTat(){
+    const host = document.getElementById("tat");
+    if(!host) return;
+    const max = Math.max.apply(null, tatStats.map(s => s.days));
+    const goalPct = (TAT_WINDOW / max * 100).toFixed(2);
+    const axis =
+      `<div class="tat-row"><div></div><div></div>` +
+      `<div class="tat-track" style="height:16px">` +
+      `<span style="position:absolute;left:${goalPct}%;top:0;font-size:10.5px;` +
+      `color:var(--muted);font-weight:600;white-space:nowrap;padding-left:5px">14-day window</span>` +
+      `</div></div>`;
+    const rows = tatStats.map(s => {
+      const w = Math.max(s.days / max * 100, 1).toFixed(2);
+      return `<div class="tat-row">` +
+        `<div class="tat-name">${s.name}</div>` +
+        `<div class="tat-num">${s.days}d</div>` +
+        `<div class="tat-track">` +
+        `<div class="tat-fill" style="width:${w}%"></div>` +
+        `<div class="tat-goal" style="left:${goalPct}%"></div>` +
+        `</div></div>`;
+    }).join("");
+    host.innerHTML = axis + rows;
   })();
 </script>
-</body>
-</html>
+
+
+</body></html>
