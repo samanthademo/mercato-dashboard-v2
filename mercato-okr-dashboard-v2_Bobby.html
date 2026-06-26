@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mercato OKR Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBFAF7; --card:#FFFFFF; --ink:#1F2A24; --muted:#76837C;
+    --green-dark:#1E5C42; --green:#3E9B6E; --green-light:#BFE0CD;
+    --red:#C2453C; --grey-bar:#C7CBC8;
+    --hairline:#E8EAE6; --rule:#1E5C42; --track:#F1F2EF;
+    --chip-red-bg:#F7E3E0; --chip-red-ink:#B23A30;
+    --chip-green-bg:#E1EFE7; --chip-green-ink:#1E5C42;
+    /* program palette for the stacked referrals chart */
+    --p-sipps:#1E5C42; --p-modify:#4F9E78; --p-somos:#86C0A3;
+    --p-hvcc:#D8B25A; --p-cd:#6E8CA8; --p-act:#9B7BA3;
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"Inter",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+       font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:30px 24px 48px}
+
+  .h1{font-family:var(--serif);font-weight:700;color:var(--green-dark);font-size:30px;
+      margin:0 0 18px;letter-spacing:-.01em}
+
+  /* objective bar */
+  .obj{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--ink);
+       font-weight:500;margin-bottom:18px}
+  .obj b{background:var(--green-dark);color:#fff;font-weight:700;font-size:12px;
+         padding:3px 9px;border-radius:5px;letter-spacing:.02em}
+
+  /* KR band */
+  .kr-band{display:grid;grid-template-columns:repeat(5,1fr);background:var(--card);
+           border:1px solid var(--hairline);border-radius:12px;overflow:hidden;margin-bottom:34px}
+  .kr{padding:16px 18px;border-left:1px solid var(--hairline)}
+  .kr:first-child{border-left:0}
+  .kr .tag{display:inline-block;background:var(--green-dark);color:#fff;font-size:10px;
+           font-weight:700;letter-spacing:.04em;padding:2px 7px;border-radius:4px;margin-bottom:8px}
+  .kr .lbl{font-size:11.5px;color:var(--muted);line-height:1.3;min-height:30px}
+  .kr .val{font-family:var(--sans);font-weight:700;font-size:30px;letter-spacing:-.02em;margin:3px 0 5px}
+  .kr .sub{font-size:11.5px;color:var(--muted)}
+  .kr .sub .dn{color:var(--red);font-weight:700;margin-left:4px}
+
+  /* section header */
+  .sec-head{display:flex;align-items:baseline;gap:10px;border-bottom:2.5px solid var(--rule);
+            padding-bottom:8px;margin:0 0 16px}
+  .sec-num{font-weight:700;color:var(--green-dark);font-size:15px}
+  .sec-title{font-family:var(--serif);font-weight:600;color:var(--green-dark);font-size:21px}
+  .section{margin-bottom:34px}
+
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+  .stack{display:grid;gap:16px}
+  @media(max-width:780px){.row2{grid-template-columns:1fr}}
+
+  .card{background:var(--card);border:1px solid var(--hairline);border-radius:12px;padding:18px 20px}
+  .card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+  .card-title{font-weight:600;font-size:14.5px;color:var(--ink)}
+  .card-tag{font-size:11px;color:var(--muted);font-weight:600;white-space:nowrap}
+  .card-foot{font-size:11px;color:var(--muted);margin-top:14px;font-style:italic}
+
+  /* period dropdown */
+  .period{font-family:var(--sans);font-size:11.5px;color:var(--green-dark);font-weight:600;
+          background:#F1F5F2;border:1px solid var(--hairline);border-radius:6px;flex:none;
+          padding:4px 24px 4px 9px;cursor:pointer;-webkit-appearance:none;appearance:none;
+          background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231E5C42' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-repeat:no-repeat;background-position:right 9px center}
+  .period:focus-visible{outline:2px solid var(--p-modify);outline-offset:1px}
+
+  /* ===== stacked bar chart (section 1) ===== */
+  .chart{height:248px;display:flex;align-items:flex-end;gap:22px;padding:26px 4px 0}
+  .col{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;
+       justify-content:flex-end;position:relative;min-width:0}
+  .col .total{font-weight:700;font-size:12.5px;margin-bottom:5px;color:var(--ink)}
+  .bar{width:62%;max-width:46px;display:flex;flex-direction:column;border-radius:3px 3px 0 0;
+       overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .seg{width:100%}
+  .col .qlabel{margin-top:8px;font-size:11px;color:var(--muted);text-align:center;font-weight:500}
+  .col.current .qlabel{color:var(--ink);font-weight:700}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;padding-top:14px;border-top:1px solid var(--hairline)}
+  .lg{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink)}
+  .sw{width:11px;height:11px;border-radius:3px;flex:none}
+
+  /* ===== rate bar chart (section 2) ===== */
+  .ratechart{padding-top:4px}
+  .rc-plot{position:relative;height:226px;padding-top:26px}
+  .rc-bars{display:flex;align-items:flex-end;gap:22px;height:200px}
+  .rcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0}
+  .rcol .rv{font-weight:700;font-size:12.5px;margin-bottom:5px}
+  .rbar{width:62%;max-width:46px;border-radius:3px 3px 0 0}
+  .rbar.miss{background:var(--red)} .rbar.hit{background:var(--green)}
+  .rgoal{position:absolute;left:4px;right:4px;border-top:1.5px dashed #9AA39C;z-index:3}
+  .rgoal .rgl{position:absolute;right:0;top:-15px;font-size:10.5px;color:var(--muted);font-weight:600;background:var(--card);padding:0 5px}
+  .rc-xlabels{display:flex;gap:22px;margin-top:8px}
+  .rc-xlabels .rl{flex:1;text-align:center;font-size:11px;color:var(--muted);font-weight:500;min-width:0}
+  .rc-xlabels .rl.current{color:var(--ink);font-weight:700}
+
+  /* ===== generic horizontal-bar list ===== */
+  .blist{display:flex;flex-direction:column}
+  .brow{display:grid;grid-template-columns:104px 1fr 64px;gap:10px;align-items:center;
+        padding:6.5px 0;border-bottom:1px solid var(--hairline)}
+  .brow:last-child{border-bottom:0}
+  .bname{font-size:12.5px;color:var(--ink);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bname.child{padding-left:18px;color:var(--muted);font-weight:500}
+  .btrack{position:relative;height:11px;background:var(--track);border-radius:6px;overflow:visible}
+  .bfill{height:100%;border-radius:6px}
+  .bfill.green{background:var(--green)} .bfill.grey{background:var(--grey-bar)}
+  .bgoal{position:absolute;top:-3px;bottom:-3px;width:0;border-left:1.5px dashed #9AA39C}
+  .bval{font-weight:700;font-size:12.5px;text-align:right}
+  .bval.none{color:#C2C7C2;font-weight:500}
+
+  /* ===== chip rows (cancel / issue by SCN, by fulfillment) ===== */
+  .crow{display:grid;grid-template-columns:1fr auto auto auto;gap:12px;align-items:center;
+        padding:11px 0;border-bottom:1px solid var(--hairline)}
+  .crow:last-child{border-bottom:0}
+  .cname{font-size:13px;font-weight:500}
+  .cval{font-weight:700;font-size:17px}
+  .cval.over{color:var(--red)} .cval.under{color:var(--green-dark)} .cval.none{color:#C2C7C2;font-weight:500;font-size:14px}
+  .cgoal{font-size:11.5px;color:var(--muted);white-space:nowrap}
+  .chip{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap}
+  .chip.over{background:var(--chip-red-bg);color:var(--chip-red-ink)}
+  .chip.under{background:var(--chip-green-bg);color:var(--chip-green-ink)}
+  .chip.blank{visibility:hidden}
+
+  /* ===== quarter bar chart (members served) ===== */
+  .qchart{height:230px;display:flex;align-items:flex-end;gap:26px;padding:26px 6px 0}
+  .qcol{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end}
+  .qcol .qv{font-weight:700;font-size:12.5px;margin-bottom:5px}
+  .qbar{width:54%;max-width:60px;border-radius:3px 3px 0 0;background:var(--green-light)}
+  .qcol.current .qbar{background:var(--green)}
+  .qcol .ql{margin-top:8px;font-size:11.5px;color:var(--muted);font-weight:500}
+  .qcol.current .ql{color:var(--ink);font-weight:700}
+
+  /* ===== donut (conversion) ===== */
+  .donut-wrap{display:flex;align-items:center;gap:24px;padding:14px 0 6px}
+  .donut{width:152px;height:152px;border-radius:50%;display:grid;place-items:center;position:relative;flex:none}
+  .donut::after{content:"";position:absolute;width:104px;height:104px;background:var(--card);border-radius:50%}
+  .donut .dv{position:relative;text-align:center;z-index:1}
+  .donut .dpct{font-weight:700;font-size:26px;color:var(--red);letter-spacing:-.02em}
+  .donut .dlbl{font-size:11px;color:var(--muted)}
+  .goal-note .g1{font-size:13px;color:var(--ink);margin-bottom:8px}
+
+  /* recent-quarters strip */
+  .rq{margin-top:16px;padding-top:12px;border-top:1px solid var(--hairline)}
+  .rq .rq-cap{font-size:11px;color:var(--muted);font-style:italic;margin-bottom:7px}
+  .rq .rq-vals{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+  .rq .rq-vals b{color:var(--ink)}
+
+  /* big blended metric (cancel / issue) */
+  .blended{min-height:150px;display:flex;flex-direction:column;justify-content:flex-start}
+  .blended .big{font-family:var(--sans);font-weight:700;font-size:46px;color:var(--red);letter-spacing:-.02em;line-height:1}
+  .blended .big-row{display:flex;align-items:baseline;gap:12px;margin:4px 0 2px}
+  .blended .gtxt{font-size:12.5px;color:var(--muted)}
+
+  /* TAT */
+  .tat-desc{font-size:12px;color:var(--muted);margin:-2px 0 16px;max-width:760px}
+  .tat-row{display:grid;grid-template-columns:150px 54px 1fr;gap:14px;align-items:center;padding:5px 0}
+  .tat-name{font-size:12.5px;color:var(--ink)}
+  .tat-num{font-weight:700;font-size:12.5px}
+  .tat-track{position:relative;height:22px}
+  .tat-fill{height:100%;background:var(--green);border-radius:3px;display:flex;align-items:center;
+            justify-content:flex-end;padding-right:7px;color:#fff;font-size:10.5px;font-weight:700;min-width:24px}
+  .tat-goal{position:absolute;top:0;bottom:0;width:0;border-left:1.5px dashed #9AA39C}
+  .tat-wrap{position:relative}
+  .tat-foot{font-size:11.5px;color:var(--muted);margin-top:12px}
+
+  /* ===== section-1 table ===== */
+  .tbl-note{font-size:11px;color:var(--muted);margin-top:12px;font-style:italic}
+  table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px;font-variant-numeric:tabular-nums}
+  th.lead,td.lead{width:24%}
+  thead th{font-size:11px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);
+           font-weight:600;text-align:right;padding:0 0 9px;border-bottom:1.5px solid var(--hairline)}
+  thead th.lead{text-align:left}
+  tbody td{padding:8px 0;border-bottom:1px solid var(--hairline);text-align:right}
+  tbody td.lead{text-align:left}
+  .pname{display:flex;align-items:center;gap:9px;font-weight:500}
+  .leadwrap{display:flex;align-items:center}
+  .toggle{appearance:none;flex:none;width:16px;height:16px;margin-left:8px;padding:0;
+          border:1px solid var(--hairline);background:#F1F5F2;color:var(--green-dark);
+          border-radius:4px;font-size:12px;line-height:1;font-weight:700;cursor:pointer;
+          display:inline-flex;align-items:center;justify-content:center}
+  .toggle:hover{background:#E6EEE9}
+  .toggle:focus-visible{outline:2px solid var(--p-modify);outline-offset:1px}
+  td.lead.child{padding-left:0}
+  .subname{display:inline-block;padding-left:44px;color:var(--muted);font-weight:500}
+  .mh-child td, .conv-mh-child td, .memb-mh-child td, .cancel-mh-child td, .issue-mh-child td{color:var(--muted)}
+  .ztext{color:#C2C7C2}
+  tfoot td{padding:10px 0 0;font-weight:700;text-align:right;border-top:1.5px solid var(--rule)}
+  tfoot td.lead{text-align:left;color:var(--green-dark)}
+
+  .page-foot{font-size:11px;color:var(--muted);line-height:1.6;border-top:1px solid var(--hairline);
+             padding-top:16px;margin-top:8px}
+  /* ===== TAT distribution (Teana addition) ===== */
+  .tat-sub{font-size:12px;color:var(--muted);margin:0 0 14px;line-height:1.5}
+  .tat-row{display:grid;grid-template-columns:180px 56px 1fr;align-items:center;gap:14px;padding:8px 0;border-bottom:1px solid var(--hairline)}
+  .tat-row:last-of-type{border-bottom:none}
+  .tat-lbl{font-size:13px;color:var(--ink);font-weight:500}
+  .tat-day{font-size:14px;font-weight:700;color:var(--ink)}
+  .tat-bar{display:flex;align-items:center;position:relative}
+  .tat-bar .fillv{height:20px;background:var(--green);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding:0 8px;color:#fff;font-size:11px;font-weight:700;min-width:36px;white-space:nowrap}
+  .tat-win{position:absolute;top:-5px;bottom:-5px;border-left:1.5px dashed var(--muted);z-index:2}
+  .tat-note{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.5}
+  .tat-note .win{display:inline-block;width:16px;border-top:1.5px dashed var(--muted);vertical-align:middle;margin:0 3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1 class="h1">Mercato 2026 OKR Dashboard</h1>
+  <div class="obj"><b>O1</b> Maximize New York 1115 Medicaid Waiver Market Share</div>
+
+  <!-- ===================== 1 · REFERRALS RECEIVED (revised) ===================== -->
+  <section class="section">
+    <div class="sec-head"><span class="sec-num">1.</span><span class="sec-title">NY Medicaid Referrals Received</span></div>
+
+    <div class="stack">
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">New Case Referrals (3.3 &amp; 3.4)</span>
+          <select class="period" id="chart-period" aria-label="Chart period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <div class="chart" id="chart"></div>
+        <div class="legend" id="legend"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">New Case Referrals (3.3 &amp; 3.4) By Program</span>
+          <select class="period" id="tbl-period" aria-label="Table period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <table id="tbl"></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2 · REFERRAL CONVERSION RATE ===================== -->
+  <section class="section">
+    <div class="sec-head"><span class="sec-num">2.</span><span class="sec-title">NY Medicaid Referral Conversion Rate</span></div>
+
+    <div class="stack">
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Referral Conversion Rate (14 Days)</span>
+        </div>
+        <div class="ratechart" id="conv-chart"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Referral Conversion Rate (14 Days) By Program</span>
+        </div>
+        <table id="conv-tbl"></table>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Turnaround Time (TAT) Distribution</span>
+        </div>
+        <div class="tat-sub">Days from Case Created to Converted Referral Date, positive values only. The window should cover the tail — where conversions stop arriving — not just the average.</div>
+        <div id="tat-dist"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3 · MEMBERS SERVED ===================== -->
+  <section class="section">
+    <div class="sec-head"><span class="sec-num">3.</span><span class="sec-title">NY Medicaid Members Served</span></div>
+
+    <div class="stack">
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Members Served (3.3 &amp; 3.4)</span>
+          <select class="period" id="memb-chart-period" aria-label="Chart period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <div class="chart" id="memb-chart"></div>
+        <div class="legend" id="memb-legend"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Members Served (3.3 &amp; 3.4) By Program</span>
+          <select class="period" id="memb-tbl-period" aria-label="Table period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <table id="memb-tbl"></table>
+      </div>
+    </div>
+
+    <div class="stack" style="margin-top:16px">
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Members Served (3.3 &amp; 3.4) By Fulfillment Type</span>
+          <select class="period" id="ft-period" aria-label="Fulfillment type period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <table id="ft-tbl"></table>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Members Served (3.3 &amp; 3.4) By Box Fulfillment Partner</span>
+          <select class="period" id="fp-period" aria-label="Fulfillment partner period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <table id="fp-tbl"></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4 · MEMBER CANCEL RATE ===================== -->
+  <section class="section">
+    <div class="sec-head"><span class="sec-num">4.</span><span class="sec-title">NY Medicaid Member Cancel Rate</span></div>
+
+    <div class="stack">
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Member Cancel Rate (3.3 &amp; 3.4)</span>
+          <select class="period" id="cancel-chart-period" aria-label="Chart period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <div class="ratechart" id="cancel-chart"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Member Cancel Rate (3.3 &amp; 3.4) By Program</span>
+          <select class="period" id="cancel-tbl-period" aria-label="Table period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <table id="cancel-tbl"></table>
+      </div>
+    </div>
+
+    <div class="stack" style="margin-top:16px">
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Member Cancel Rate (3.3 &amp; 3.4) By Fulfillment Type</span>
+          <select class="period" id="cancel-ft-period" aria-label="Fulfillment type period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <table id="cancel-ft-tbl"></table>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Member Cancel Rate (3.3 &amp; 3.4) By Box Fulfillment Partner</span>
+          <select class="period" id="cancel-fp-period" aria-label="Fulfillment partner period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <table id="cancel-fp-tbl"></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5 · ISSUE RATE ===================== -->
+  <section class="section">
+    <div class="sec-head"><span class="sec-num">5.</span><span class="sec-title">NY Medicaid Member Issue Rate</span></div>
+
+    <div class="stack">
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Member Issue Rate</span>
+          <select class="period" id="issue-chart-period" aria-label="Chart period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <div class="ratechart" id="issue-chart"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Member Issue Rate By Program</span>
+          <select class="period" id="issue-tbl-period" aria-label="Table period">
+            <option value="quarterly">Quarterly</option>
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </div>
+        <table id="issue-tbl"></table>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  /* TAT distribution - Teana addition. Real figures from her tool. */
+  (function(){
+    var rows=[["Average (mean)",2.9],["Median (P50)",1],["75th percentile",4],["90th percentile",7],["95th percentile",12],["99th percentile",23],["Max",129]];
+    var mx=Math.sqrt(129), win=(Math.sqrt(14)/mx*100).toFixed(1);
+    var el=document.getElementById("tat-dist");
+    if(!el) return;
+    el.innerHTML=rows.map(function(r){
+      var w=(Math.sqrt(r[1])/mx*100).toFixed(1);
+      var val=(r[1]%1===0?r[1]:r[1].toFixed(1));
+      var d=val+"d";
+      return '<div class="tat-row"><span class="tat-lbl">'+r[0]+'</span><span class="tat-day">'+val+'</span><span class="tat-bar"><span class="fillv" style="width:'+w+'%">'+d+'</span><span class="tat-win" style="left:'+win+'%"></span></span></div>';
+    }).join("");
+    el.insertAdjacentHTML("afterend",'<div class="tat-note"><span class="win"></span> Dashed line marks the 14-day conversion window. The 95th percentile (12d) falls inside it; the 99th (23d) and max (129d) sit in the tail beyond.</div>');
+  })();
+</script>
+</body>
+</html>
